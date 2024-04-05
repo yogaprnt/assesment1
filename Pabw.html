@@ -30,7 +30,7 @@
       <button onclick="cekBuku()">Submit</button>
 
       
-      <script>
+     <script>
       let buku = [
         { nama: "sherlock", jumlah: 2 },
         { nama: "sherlock", jumlah: 2 },
@@ -44,15 +44,24 @@
           alert("Tolong diisi jumlah yang ingin anda ambil");
           return;
         }
-        break;
+
+        let bukuDitemukan = false;
+        for (let i = 0; i < buku.length; i++) {
+          if (buku[i].nama === pilihan) {
+            bukuDitemukan = true;
+            if (parseInt(jumlah) > buku[i].jumlah) {
+              alert("jumlah buku tidak tersedia");
+            } else {
+              alert("silahkan ambil buku anda");
+            }
+            break;
           }
         }
         if (bukuDitemukan) {
           alert("Buku tidak ditemukan");
         }
       }
-
-      </script>
+    </script>
     </div>
   </body>
 </html>
